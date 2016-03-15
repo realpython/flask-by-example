@@ -1,6 +1,14 @@
+alembic==0.8.5
 Flask==0.10.1
+Flask-Migrate==1.8.0
+Flask-Script==2.0.5
+Flask-SQLAlchemy==2.1
 gunicorn==19.4.5
 itsdangerous==0.24
 Jinja2==2.8
+Mako==1.0.4
 MarkupSafe==0.23
+psycopg2==2.6.1
+python-editor==0.5
+SQLAlchemy==1.0.12
 Werkzeug==0.11.4
