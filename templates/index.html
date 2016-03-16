@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wordcount</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+    <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-sm-offset-1">
+          <h1>Wordcount 3000</h1>
+          <br>
+          <form role="form" method="POST" action="/">
+            <div class="form-group">
+              <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <br>
+          {% for error in errors %}
+            <h4>{{ error }}</h4>
+          {% endfor %}
+          <br>
+        </div>
+        <div class="col-sm-5 col-sm-offset-1">
+          {% if results %}
+            <h2>Frequencies</h2>
+            <br>
+            <div id="results">
+              <table class="table table-striped" style="max-width: 300px;">
+                <thead>
+                  <tr>
+                    <th>Word</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                {% for result in results%}
+                  <tr>
+                    <td>{{ result[0] }}</td>
+                    <td>{{ result[1] }}</td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
