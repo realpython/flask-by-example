@@ -1,5 +1,6 @@
 alembic==0.8.5
 beautifulsoup4==4.4.1
+click==6.3
 Flask==0.10.1
 Flask-Migrate==1.8.0
 Flask-Script==2.0.5
@@ -12,6 +13,8 @@ MarkupSafe==0.23
 nltk==3.2
 psycopg2==2.6.1
 python-editor==0.5
+redis==2.10.5
 requests==2.9.1
+rq==0.5.6
 SQLAlchemy==1.0.12
 Werkzeug==0.11.4
