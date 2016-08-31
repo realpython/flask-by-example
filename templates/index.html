@@ -3,12 +3,9 @@
   <head>
     <title>Wordcount</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style>
-      .container {
-        max-width: 1000px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
   </head>
     <body ng-controller="WordcountController">
     <div class="container">
@@ -56,8 +53,12 @@
             filename='spinner.gif') }}" ng-show="loading">
         </div>
       </div>
+      <br>
+      <word-count-chart data="wordcounts"></word-count-chart>
     </div>
     <br><br>
+    <!-- scripts -->
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>

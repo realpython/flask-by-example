@@ -1,0 +1,29 @@
+.container {
+  max-width: 1000px;
+}
+
+#chart {
+  overflow-y: scroll;
+}
+
+#chart {
+  background: #eee;
+  padding: 3px;
+}
+
+#chart div {
+  width: 0;
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+#chart div {
+  height: 30px;
+  font: 15px;
+  background-color: #006dcc;
+  text-align: right;
+  padding: 3px;
+  color: white;
+  box-shadow: 2px 2px 2px gray;
+}
