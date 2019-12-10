@@ -47,3 +47,6 @@ $ python worker.py
 # the app
 $ python app.py
 ```
+
+Or you can run this on Repl.it:
+[![Run on Repl.it](https://repl.it/badge/github/realpython/flask-by-example)](https://repl.it/github/realpython/flask-by-example)
