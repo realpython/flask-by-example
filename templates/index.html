@@ -7,7 +7,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
   </head>
-    <body ng-controller="WordcountController">
+  <body ng-controller="WordcountController">
     <div class="container">
       <div class="row">
         <div class="col-sm-5 col-sm-offset-1">
@@ -21,7 +21,7 @@
               <button type="submit" class="btn btn-primary" ng-disabled="loading">{{ submitButtonText }}</button>
             {% endraw %}
           </form>
-          <div class="alert alert-danger" role="alert" ng-show='urlError'>
+          <div class="alert alert-danger" role="alert" ng-show='urlerror'>
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>
             <span>There was an error submitting your URL.<br>
@@ -40,17 +40,16 @@
                 </tr>
               </thead>
               <tbody>
-              {% raw %}
-                <tr ng-repeat="(key, val) in wordcounts">
-                  <td>{{key}}</td>
-                  <td>{{val}}</td>
+                <tr ng-repeat="element in wordcounts">
+                  {% raw %}
+                  <td>{{element[0]}}</td>
+                  <td>{{element[1]}}</td>
+                  {% endraw %}
                 </tr>
-              {% endraw %}
               </tbody>
             </table>
           </div>
-          <img class="col-sm-3 col-sm-offset-4" src="{{ url_for('static',
-            filename='spinner.gif') }}" ng-show="loading">
+          <img class="col-sm-3 col-sm-offset-4" src="{{ url_for('static', filename='spinner.gif') }}" ng-show="loading">
         </div>
       </div>
       <br>

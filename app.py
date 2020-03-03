@@ -8,7 +8,7 @@ from rq import Queue
 from rq.job import Job
 from worker import conn
 from flask import Flask, render_template, request, jsonify
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from stop_words import stops
 from collections import Counter
 from bs4 import BeautifulSoup
@@ -73,10 +73,13 @@ def index():
 
 @app.route('/start', methods=['POST'])
 def get_counts():
+    # this import solves a rq bug which currently exists
+    from app import count_and_save_words
+
     # get url
     data = json.loads(request.data.decode())
     url = data["url"]
-    if 'http://' not in url[:7]:
+    if not url[:8].startswith(('https://', 'http://')):
         url = 'http://' + url
     # start job
     job = q.enqueue_call(

@@ -80,17 +80,19 @@
           d3.select('#chart').selectAll('*').remove();
           var data = scope.wordcounts;
           for (var word in data) {
+            var key = data[word][0];
+            var value = data[word][1];
             d3.select('#chart')
               .append('div')
               .selectAll('div')
-              .data(word[0])
+              .data(word)
               .enter()
               .append('div')
               .style('width', function() {
-                return (data[word] * 20) + 'px';
+                return (value * 3) + 'px';
               })
               .text(function(d){
-                return word;
+                return key;
               });
           }
         }, true);
