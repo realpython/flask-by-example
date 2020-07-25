@@ -3,8 +3,8 @@ beautifulsoup4==4.8.2
 certifi==2019.11.28
 chardet==3.0.4
 Click==7.0
-Flask==1.1.1
-Flask-Migrate==2.5.2
+Flask==1.1.2
+Flask-Migrate==2.5.3
 Flask-Script==2.0.6
 Flask-SQLAlchemy==2.4.1
 gunicorn==20.0.4
