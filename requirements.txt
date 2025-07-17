@@ -14,7 +14,7 @@ Jinja2==2.11.1
 Mako==1.1.1
 MarkupSafe==1.1.1
 nltk==3.4.5
-psycopg2-binary==2.8.4
+psycopg2-binary>=2.9.6
 python-dateutil==2.8.1
 python-editor==1.0.4
 redis==3.4.1
